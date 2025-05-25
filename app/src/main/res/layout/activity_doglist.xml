@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".doglistActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="doggy list"
+        android:layout_marginTop="200sp"
+        android:layout_marginBottom="50sp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Add"
+        android:textSize="30dp"
+        android:layout_marginBottom="30sp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Update"
+        android:textSize="30dp"
+        android:layout_marginBottom="30sp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Delete"
+        android:textSize="30dp"
+        android:layout_marginBottom="30sp"/>
+
+</LinearLayout>
