@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".dogUpdateActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="Update a Dog..."
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Spinner
+        android:id="@+id/dogSpin"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/nameTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25sp"
+        android:hint="Name..."
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/breedTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25sp"
+        android:hint="Breed..."
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/colourTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25sp"
+        android:hint="Colour..."
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:id="@+id/ageTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25sp"
+        android:hint="Age..."
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/updateBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Update Dog"
+        android:textSize="30dp"
+        android:layout_margin="30sp"/>
+
+</LinearLayout>

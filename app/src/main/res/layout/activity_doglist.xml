@@ -18,6 +18,7 @@
         android:layout_marginBottom="50sp"/>
 
     <Button
+        android:id="@+id/addDogBtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -27,6 +28,7 @@
         android:layout_marginBottom="30sp"/>
 
     <Button
+        android:id="@+id/updateDogBtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -36,6 +38,7 @@
         android:layout_marginBottom="30sp"/>
 
     <Button
+        android:id="@+id/deleteDogBtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
