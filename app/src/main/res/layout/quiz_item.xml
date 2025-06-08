@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:radius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/quizNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/quizCatTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/quizDiffTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Difficulty: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/startDTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Date: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/endDTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/likesTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Likes: "
+            android:fontFamily="@font/runescape_uf"
+            android:textSize="25dp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

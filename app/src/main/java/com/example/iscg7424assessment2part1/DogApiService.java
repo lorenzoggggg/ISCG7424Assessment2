@@ -7,7 +7,6 @@ public interface DogApiService {
     @GET("breeds/image/random/10")
     Call<DogResponse> getRandomDogImage();
 
-    // Endpoint for a random image from a specific breed
     @GET("breed/{breed}/images/random/10")
     Call<DogResponse> getRandomImageByBreed(@Path("breed") String breed);
 

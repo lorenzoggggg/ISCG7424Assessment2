@@ -57,7 +57,6 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogViewHolder> {
         }
     }
 
-    // AsyncTask to download image from URL and set it on ImageView
     private static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
 
@@ -84,7 +83,6 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogViewHolder> {
             if (bitmap != null) {
                 imageView.setImageBitmap(bitmap);
             } else {
-                // Optionally set a placeholder or error image here
                 imageView.setImageResource(android.R.color.darker_gray);
             }
         }

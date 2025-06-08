@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".playQuizActivity">
+
+    <TextView
+        android:id="@+id/qNumTxt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="Question "
+        android:layout_margin="100sp"/>
+
+    <TextView
+        android:id="@+id/questionTxt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="question..."
+        android:layout_margin="30sp"/>
+
+    <Spinner
+        android:id="@+id/ansSpin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30sp"/>
+
+    <Button
+        android:id="@+id/confBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Confirm Answer"
+        android:layout_margin="30sp"/>
+
+</LinearLayout>

@@ -7,20 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".dogDbActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/runescape_uf"
-        android:text="ISCG7424 \nAssessment 2"
+        android:text="Dog Database"
         android:textSize="50dp"
-        android:layout_marginBottom="80sp"
+        android:layout_marginBottom="50sp"
         />
 
     <Button
-        android:id="@+id/task1Btn"
-        android:text="Task 1: Dog Database"
+        android:id="@+id/doglistBtn"
+        android:text="doggy list"
         android:fontFamily="@font/runescape_uf"
         android:textSize="30dp"
         android:layout_width="300dp"
@@ -29,8 +29,8 @@
         />
 
     <Button
-        android:id="@+id/task2Btn"
-        android:text="Task 2: Quiz"
+        android:id="@+id/fetchBtn"
+        android:text="play fetch"
         android:fontFamily="@font/runescape_uf"
         android:textSize="30dp"
         android:layout_width="300dp"

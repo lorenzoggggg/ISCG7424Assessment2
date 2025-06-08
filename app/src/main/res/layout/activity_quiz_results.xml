@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".quizResultsActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="Quiz Complete!"
+        android:layout_margin="80sp"/>
+
+    <TextView
+        android:id="@+id/scoreTxt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="Your final score was "
+        android:layout_margin="50sp"/>
+
+    <Button
+        android:id="@+id/likeBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:fontFamily="@font/runescape_uf"
+        android:text="I liked this quiz!"
+        android:layout_margin="30sp"/>
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:fontFamily="@font/runescape_uf"
+        android:text="Back to quiz list" />
+
+</LinearLayout>

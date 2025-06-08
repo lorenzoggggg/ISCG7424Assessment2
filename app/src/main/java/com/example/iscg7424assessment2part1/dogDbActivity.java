@@ -11,35 +11,36 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    Button task1Btn, task2Btn;
+public class dogDbActivity extends AppCompatActivity {
+
+    Button dogListBtn, fetchBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dog_db);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        task1Btn = findViewById(R.id.task1Btn);
-        task2Btn = findViewById(R.id.task2Btn);
+        dogListBtn = findViewById(R.id.doglistBtn);
+        fetchBtn = findViewById(R.id.fetchBtn);
 
-        task1Btn.setOnClickListener(new View.OnClickListener() {
+        dogListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, dogDbActivity.class);
+                Intent intent = new Intent(dogDbActivity.this, doglistActivity.class);
                 startActivity(intent);
             }
         });
 
-        task2Btn.setOnClickListener(new View.OnClickListener() {
+        fetchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, quizLoginActivity.class);
+                Intent intent = new Intent(dogDbActivity.this, fetchActivity.class);
                 startActivity(intent);
             }
         });

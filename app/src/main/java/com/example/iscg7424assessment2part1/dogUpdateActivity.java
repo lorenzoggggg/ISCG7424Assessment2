@@ -29,7 +29,6 @@ public class dogUpdateActivity extends AppCompatActivity {
     private EditText nameTxt, breedTxt, colourTxt, ageTxt;
     private Button updateBtn;
     private DatabaseReference dbRef;
-
     private ArrayList<Dog> dogList = new ArrayList<>();
     private ArrayAdapter<String> spinnerAdapter;
 

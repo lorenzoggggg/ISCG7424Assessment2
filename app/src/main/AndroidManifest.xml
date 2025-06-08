@@ -15,6 +15,30 @@
         android:theme="@style/Theme.ISCG7424Assessment2Part1"
         tools:targetApi="31">
         <activity
+            android:name=".quizResultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".playQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".playerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".manageQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".quizLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dogDbActivity"
+            android:exported="false" />
+        <activity
             android:name=".dogDeleteActivity"
             android:exported="false" />
         <activity

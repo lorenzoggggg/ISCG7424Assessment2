@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".manageQuizActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/runescape_uf"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:text="Manage Quizzes"
+        android:layout_margin="30sp"/>
+
+    <EditText
+        android:id="@+id/nameMTxt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Name"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/startDMTxt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Start Date"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25dp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/endDMTxt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="End Date"
+        android:fontFamily="@font/runescape_uf"
+        android:textSize="25dp"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/updateQBtn"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/runescape_uf"
+            android:text="Update"
+            android:textSize="30dp"
+            android:layout_margin="5sp"/>
+
+        <Button
+            android:id="@+id/deleteQBtn"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/runescape_uf"
+            android:text="Delete"
+            android:textSize="30dp"
+            android:layout_margin="5sp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quizzesMRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp"/>
+</LinearLayout>
