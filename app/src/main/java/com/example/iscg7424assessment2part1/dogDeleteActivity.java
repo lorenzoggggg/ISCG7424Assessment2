@@ -53,18 +53,17 @@ public class dogDeleteActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(v -> {
             int selectedPosition = dogSpin.getSelectedItemPosition();
             if (selectedPosition == Spinner.INVALID_POSITION || dogList.isEmpty()) {
-                Toast.makeText(this, "Please select a dog to delete", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please select a dog to delete!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             Dog selectedDog = dogList.get(selectedPosition);
 
-            // Confirm dialog before deletion
             new AlertDialog.Builder(this)
-                    .setTitle("Delete Confirmation")
-                    .setMessage("Are you sure you want to delete '" + selectedDog.name + "' ?")
-                    .setPositiveButton("Yes", (dialog, which) -> deleteDog(selectedDog))
-                    .setNegativeButton("No", null)
+                    .setTitle("ARE YOU SURE?!")
+                    .setMessage("Are you sure you want to destroy '" + selectedDog.name + "' ??")
+                    .setPositiveButton("Yes, down with the beast", (dialog, which) -> deleteDog(selectedDog))
+                    .setNegativeButton("No, i cant...", null)
                     .show();
         });
     }
@@ -92,20 +91,20 @@ public class dogDeleteActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(dogDeleteActivity.this, "Failed to load dogs.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(dogDeleteActivity.this, "Doggies failed to load :/", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void deleteDog(Dog dog) {
         if (dog.id == null) {
-            Toast.makeText(this, "Dog ID is null, cannot delete.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Dog ID null, cannot delete!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         dbRef.child(dog.id).removeValue()
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, dog.name + " has been deleted.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, dog.name + " has been destroyed...", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "Failed to delete " + dog.name, Toast.LENGTH_SHORT).show();

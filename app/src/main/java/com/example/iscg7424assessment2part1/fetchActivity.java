@@ -26,9 +26,8 @@ public class fetchActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DogAdapter dogAdapter;
     private Button fetchButton;
-
     private Spinner breedSpinner;
-    private String selectedBreed = "retriever"; // default
+    private String selectedBreed = "retriever";
     private final String[] breedList = {
             "random",
             "affenpinscher",
@@ -251,7 +250,7 @@ public class fetchActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<DogResponse> call, Response<DogResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<String> imageUrls = response.body().getMessage(); // ✅ fixed
+                    List<String> imageUrls = response.body().getMessage();
                     dogAdapter = new DogAdapter(fetchActivity.this, imageUrls);
                     recyclerView.setAdapter(dogAdapter);
                 }
@@ -260,7 +259,7 @@ public class fetchActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<DogResponse> call, Throwable t) {
                 t.printStackTrace();
-                Toast.makeText(fetchActivity.this, "Failed to fetch images", Toast.LENGTH_SHORT).show();
+                Toast.makeText(fetchActivity.this, "Failed to fetch puppies :/", Toast.LENGTH_SHORT).show();
             }
         });
     }

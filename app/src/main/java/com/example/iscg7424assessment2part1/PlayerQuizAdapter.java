@@ -57,7 +57,7 @@ public class PlayerQuizAdapter extends RecyclerView.Adapter<PlayerQuizAdapter.Qu
                     .setValue(quiz.likes)
                     .addOnSuccessListener(aVoid -> {
                         holder.likes.setText("Likes: " + quiz.likes);
-                        Toast.makeText(context, "You liked this quiz!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Quiz liked! Awesome!", Toast.LENGTH_SHORT).show();
                     });
         });
     }

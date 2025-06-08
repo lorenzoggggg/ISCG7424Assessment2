@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.iscg7424assessment2part1.R;
-
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
@@ -39,7 +37,6 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.DogViewHolder> {
     public void onBindViewHolder(@NonNull DogViewHolder holder, int position) {
         String imageUrl = imageUrls.get(position);
 
-        // Load image manually without Glide:
         new DownloadImageTask(holder.imageView).execute(imageUrl);
     }
 

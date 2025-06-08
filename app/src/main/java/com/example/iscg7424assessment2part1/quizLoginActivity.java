@@ -41,7 +41,7 @@ public class quizLoginActivity extends AppCompatActivity {
                 String password = passTxt.getText().toString().trim();
 
                 if (username.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(quizLoginActivity.this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(quizLoginActivity.this, "Please enter your username and password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

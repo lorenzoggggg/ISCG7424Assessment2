@@ -74,7 +74,7 @@ public class dogUpdateActivity extends AppCompatActivity {
         updateBtn.setOnClickListener(v -> {
             int position = dogSpin.getSelectedItemPosition();
             if (position == AdapterView.INVALID_POSITION) {
-                Toast.makeText(dogUpdateActivity.this, "No dog selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(dogUpdateActivity.this, "Please select a puppy!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -86,14 +86,14 @@ public class dogUpdateActivity extends AppCompatActivity {
             String age = ageTxt.getText().toString().trim();
 
             if (name.isEmpty() || breed.isEmpty() || colour.isEmpty() || age.isEmpty()) {
-                Toast.makeText(dogUpdateActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(dogUpdateActivity.this, "All fields must be entered!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             Dog updatedDog = new Dog(selectedDog.id, name, breed, colour, age);
 
             dbRef.child(updatedDog.id).setValue(updatedDog)
-                    .addOnSuccessListener(aVoid -> Toast.makeText(dogUpdateActivity.this, "Dog updated successfully!", Toast.LENGTH_SHORT).show())
+                    .addOnSuccessListener(aVoid -> Toast.makeText(dogUpdateActivity.this, "Dog successfully updated!", Toast.LENGTH_SHORT).show())
                     .addOnFailureListener(e -> Toast.makeText(dogUpdateActivity.this, "Update failed: " + e.getMessage(), Toast.LENGTH_LONG).show());
         });
     }
@@ -127,7 +127,7 @@ public class dogUpdateActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(dogUpdateActivity.this, "Failed to load dogs: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(dogUpdateActivity.this, "Doggies failed to load :/ " + error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

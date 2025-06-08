@@ -40,10 +40,8 @@ public class playerActivity extends AppCompatActivity {
         });
 
         welcomeTxt = findViewById(R.id.welcomeTxt);
-
         quizRecyclerView = findViewById(R.id.playQuizzesRV);
         quizRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         quizList = new ArrayList<>();
         adapter = new PlayerQuizAdapter(this, quizList);
         quizRecyclerView.setAdapter(adapter);
@@ -67,7 +65,7 @@ public class playerActivity extends AppCompatActivity {
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                             Quiz quiz = dataSnapshot.getValue(Quiz.class);
                             if (quiz != null) {
-                                quiz.id = dataSnapshot.getKey();  // Ensure ID is set
+                                quiz.id = dataSnapshot.getKey();
                                 quizList.add(quiz);
                             }
                         }
@@ -76,7 +74,6 @@ public class playerActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        // Handle error
                     }
                 });
     }

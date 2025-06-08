@@ -33,7 +33,7 @@ public class Quiz {
         this.startDate = startDate;
         this.endDate = endDate;
         this.questions = questions;
-        this.likes = 0; // default value
+        this.likes = 0;
     }
 }
 

@@ -69,7 +69,7 @@ public class manageQuizActivity extends AppCompatActivity {
 
         updateQBtn.setOnClickListener(v -> {
             if (selectedQuiz == null) {
-                Toast.makeText(this, "Select a quiz to update", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please select a quiz!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -79,20 +79,20 @@ public class manageQuizActivity extends AppCompatActivity {
 
             quizRef.child(selectedQuiz.id).setValue(selectedQuiz)
                     .addOnSuccessListener(unused -> {
-                        Toast.makeText(this, "Quiz updated!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Quiz successfully updated!", Toast.LENGTH_SHORT).show();
                         loadQuizzes();
                     });
         });
 
         deleteQBtn.setOnClickListener(v -> {
             if (selectedQuiz == null) {
-                Toast.makeText(this, "Select a quiz to delete", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please select a quiz!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             quizRef.child(selectedQuiz.id).removeValue()
                     .addOnSuccessListener(unused -> {
-                        Toast.makeText(this, "Quiz deleted!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Quiz successfully deleted!", Toast.LENGTH_SHORT).show();
                         selectedQuiz = null;
                         nameMTxt.setText("");
                         startDMTxt.setText("");

@@ -49,9 +49,10 @@ public class addQuizActivity extends AppCompatActivity {
             return insets;
         });
 
+        // datepicker setup to allow for a textview which displays the date chosen,
+        // upon click opens the calendar to select date from.
         txtStartDate = findViewById(R.id.startDateTxt);
         txtEndDate = findViewById(R.id.endDateTxt);
-
         Calendar calendar = Calendar.getInstance();
 
         txtStartDate.setOnClickListener(v -> {
@@ -76,6 +77,7 @@ public class addQuizActivity extends AppCompatActivity {
             }, year, month, day).show();
         });
 
+        // spinner setup to hold quiz category and difficulty options
         diffSpin = findViewById(R.id.diffSpin);
         catSpin = findViewById(R.id.catSpin);
 
@@ -102,22 +104,17 @@ public class addQuizActivity extends AppCompatActivity {
 
         findViewById(R.id.addBtn).setOnClickListener(v -> {
             String name = ((EditText) findViewById(R.id.qNameTxt)).getText().toString().trim();
-
-            // Get selected difficulty from spinner
             String difficulty = diffSpin.getSelectedItem().toString();
-
-            // Get selected category name from spinner
             String selectedCategoryName = catSpin.getSelectedItem().toString();
 
-            // Convert category name to ID using map
+            // using map to convert category name to ID for the API link
             int category = categoryMap.get(selectedCategoryName);
 
             String startDate = txtStartDate.getText().toString().trim();
             String endDate = txtEndDate.getText().toString().trim();
 
-            // Basic validation
             if (name.isEmpty() || startDate.equals("Start Date...") || endDate.equals("End Date...")) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter a date!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -154,7 +151,7 @@ public class addQuizActivity extends AppCompatActivity {
                             .child(id)
                             .setValue(quiz)
                             .addOnSuccessListener(aVoid -> {
-                                Toast.makeText(addQuizActivity.this, "Quiz added!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(addQuizActivity.this, "Quiz successfully Added!", Toast.LENGTH_SHORT).show();
                             })
                             .addOnFailureListener(e -> {
                                 Toast.makeText(addQuizActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();

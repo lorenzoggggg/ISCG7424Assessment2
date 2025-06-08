@@ -37,7 +37,7 @@ public class dogAddActivity extends AppCompatActivity {
             String age = ageTxt.getText().toString().trim();
 
             if (name.isEmpty() || breed.isEmpty() || colour.isEmpty() || age.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "All fields must be entered!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -46,11 +46,11 @@ public class dogAddActivity extends AppCompatActivity {
 
             dbRef.child(id).setValue(dog)
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Dog added successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Dog successfully added!", Toast.LENGTH_SHORT).show();
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                        Log.e("FIREBASE_ERROR", "Failed to write dog", e);
+                        Log.e("FIREBASE_ERROR", "Creation of doggy has failed :/", e);
                     });
         });
     }

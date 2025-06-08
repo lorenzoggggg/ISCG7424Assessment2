@@ -26,7 +26,6 @@ public class playQuizActivity extends AppCompatActivity {
     private TextView qNumTxt, questionTxt;
     private Spinner ansSpin;
     private Button confBtn;
-
     private List<Question> questions = new ArrayList<>();
     private int currentIndex = 0;
     private int score = 0;
@@ -43,13 +42,11 @@ public class playQuizActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Bind views
         qNumTxt = findViewById(R.id.qNumTxt);
         questionTxt = findViewById(R.id.questionTxt);
         ansSpin = findViewById(R.id.ansSpin);
         confBtn = findViewById(R.id.confBtn);
 
-        // Get quiz ID passed from previous activity
         quizId = getIntent().getStringExtra("quizId");
         loadQuestions();
     }
@@ -66,9 +63,6 @@ public class playQuizActivity extends AppCompatActivity {
                     }
                     if (!questions.isEmpty()) {
                         showQuestion();
-                    } else {
-                        Toast.makeText(this, "No questions found.", Toast.LENGTH_LONG).show();
-                        finish();
                     }
                 });
     }
@@ -90,10 +84,10 @@ public class playQuizActivity extends AppCompatActivity {
         String selectedAnswer = ansSpin.getSelectedItem().toString();
 
         if (selectedAnswer.equals(q.correctAnswer)) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Correct!!!", Toast.LENGTH_SHORT).show();
             score++;
         } else {
-            Toast.makeText(this, "Incorrect. Correct answer: " + q.correctAnswer, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "WRONG! The correct answer is: " + q.correctAnswer, Toast.LENGTH_LONG).show();
         }
 
         currentIndex++;

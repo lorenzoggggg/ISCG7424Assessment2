@@ -28,7 +28,6 @@ public class adminActivity extends AppCompatActivity {
 
     Button addQuizBtn, manageBtn;
     RecyclerView QuizzesRV;
-
     List<Quiz> quizList;
     QuizAdapter quizAdapter;
 
@@ -48,29 +47,26 @@ public class adminActivity extends AppCompatActivity {
         manageBtn = findViewById(R.id.manageQuizBtn);
         QuizzesRV = findViewById(R.id.quizzesRV);
 
-        // Button to add a quiz
         addQuizBtn.setOnClickListener(view -> {
             Intent intent = new Intent(adminActivity.this, addQuizActivity.class);
             startActivity(intent);
         });
 
-        // Button to manage quizzes
         manageBtn.setOnClickListener(view -> {
             Intent intent = new Intent(adminActivity.this, manageQuizActivity.class);
             startActivity(intent);
         });
 
-        // Setup RecyclerView
+        // setup to fill recycler view
         QuizzesRV.setLayoutManager(new LinearLayoutManager(this));
         quizList = new ArrayList<>();
         quizAdapter = new QuizAdapter(this, quizList, null);
         QuizzesRV.setAdapter(quizAdapter);
 
-        // Load quizzes from Firebase
-        loadQuizzesFromFirebase();
+        loadQuizzes();
     }
 
-    private void loadQuizzesFromFirebase() {
+    private void loadQuizzes() {
         DatabaseReference quizRef = FirebaseDatabase.getInstance().getReference("quizzes");
 
         quizRef.addValueEventListener(new ValueEventListener() {
@@ -86,7 +82,7 @@ public class adminActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(adminActivity.this, "Failed to load quizzes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(adminActivity.this, "Quizzes failed to load...", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -35,19 +35,15 @@ public class quizResultsActivity extends AppCompatActivity {
             return insets;
         });
 
-        // View bindings
         scoreTxt = findViewById(R.id.scoreTxt);
         likeBtn = findViewById(R.id.likeBtn);
         backBtn = findViewById(R.id.backBtn);
 
-        // Get intent data
         score = getIntent().getIntExtra("score", 0);
-        quizId = getIntent().getStringExtra("quizId"); // Must be passed from playQuizActivity
+        quizId = getIntent().getStringExtra("quizId");
 
-        // Set score text
         scoreTxt.setText("Your final score was " + score);
 
-        // Like button click
         likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,10 +55,10 @@ public class quizResultsActivity extends AppCompatActivity {
                             currentLikes = snapshot.getValue(Long.class);
                         }
                         quizRef.setValue(currentLikes + 1);
-                        Toast.makeText(quizResultsActivity.this, "Thanks for liking!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(quizResultsActivity.this, "Quiz liked! Awesome!", Toast.LENGTH_SHORT).show();
                     });
                 } else {
-                    Toast.makeText(quizResultsActivity.this, "Error: Quiz ID not found.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(quizResultsActivity.this, "Quiz ID not found??!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
